@@ -67,39 +67,39 @@
             <tr>
                 <td><p class="left">Kuvan leveys:</p></td>
                 <td>
-                    <input type="number" id="image-width" value="200" min="0" step="1" class="fix-input">
+                    <input type="number" id="image-width" value="500" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
                 <td><p class="left">Kuvan korkeus:</p></td>
                 <td>
-                    <input type="number" id="image-height" value="200" min="0" step="1" class="fix-input">
+                    <input type="number" id="image-height" value="500" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
                 <td><p class="left">Kuvan marginaali:</p></td>
                 <td>
-                    <input type="number" id="image-margin" value="0" min="0" step="1" class="fix-input">
+                    <input type="number" id="image-margin" value="50" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
                 <td><p class="left">Viivan paksuus:</p></td>
                 <td>
-                    <input type="number" id="line-width" value="0" min="0" step="1" class="fix-input">
+                    <input type="number" id="line-width" value="5" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
                 <td><p class="left">Fontin koko:</p></td>
                 <td>
-                    <input type="number" id="letter-size" value="0" min="0" step="1" class="fix-input">
+                    <input type="number" id="letter-size" value="50" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
                 <td><p class="left">Kulma:</p></td>
                 <td>
                     <select id="angle-status">
-                        <option value="value">Arvo</option>
-                        <option value="asked" selected>Kysytään</option>
+                        <option value="value" selected>Arvo</option>
+                        <option value="asked">Kysytään</option>
                         <option value="hidden">Piilotettu</option>
                     </select>
                 </td>
@@ -118,8 +118,8 @@
                 <td><p class="left">Vastainen kateetti:</p></td>
                 <td>
                     <select id="further-status">
-                        <option value="value" selected>Arvo</option>
-                        <option value="asked">Kysytään</option>
+                        <option value="value">Arvo</option>
+                        <option value="asked" selected>Kysytään</option>
                         <option value="hidden">Piilotettu</option>
                     </select>
                 </td>
@@ -137,7 +137,7 @@
             <tr>
                 <td class="empty"></td>
                 <td>
-                    <button id="create-image">Luo kuva</button>
+                    <button id="create-image" onclick="updateTriangleImage()">Luo kuva</button>
                 </td>
             </tr>
         </table>

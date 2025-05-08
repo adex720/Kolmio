@@ -50,7 +50,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
     context.fillStyle = '#000000';
 
     if (closer >= 0)
-        drawText(context, closer > 0 ? (closer) + "" : "x", xOffset + margin + Math.round(realWidth / 2), height - margin);
+        drawText(context, closer > 0 ? (closer) + "" : "x", xOffset + margin + Math.round(realWidth / 2), height - margin - yOffset + letterSize);
 
     if (further >= 0) {
         context.save();
