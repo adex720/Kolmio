@@ -1,3 +1,8 @@
+
+#image-creation {
+    display: none;
+}
+
 p, button, input {
     font-size: 16px ;
     line-height: 18px;
@@ -10,9 +15,21 @@ p, button, input {
     margin: 5px;
 }
 
-#image-creation {
-    display: none;
+#result-values {
+    display: flex;
+    gap: 0px 20px;
+    align-items: center;
+
+    padding: 7px;
 }
+
+.result-value {
+    margin: 0px;
+
+    font-size: 16px ;
+    line-height: 18px;
+}
+
 
 .switch {
     position: relative;
@@ -57,19 +74,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(13px);
-}
-
-#result-values {
-    display: flex;
-    gap: 0px 20px;
-    align-items: center;
-
-    padding: 7px;
-}
-
-.result-value {
-    margin: 0px;
-
-    font-size: 16px ;
-    line-height: 18px;
 }
