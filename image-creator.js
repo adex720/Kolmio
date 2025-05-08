@@ -56,11 +56,15 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
         drawText(context, closer > 0 ? (closer) + "" : "x", xOffset + margin + Math.round(realWidth / 2), height - margin - yOffset + letterSize);
 
     if (further >= 0) {
-        context.save();
-        context.translate(xOffset + margin + realWidth + letterSize, height - yOffset - margin - Math.round(realHeight / 2));
-        context.rotate(Math.PI / 2);
-        drawText(context, further > 0 ? (further) + "" : closer == 0 ? "y" : "x", 0, 0);
-        context.restore();
+        if (further == 0) {
+            drawText(context, closer == 0 ? "y" : "x", xOffset + margin + realWidth + letterSize, height - yOffset - margin - Math.round(realHeight / 2));
+        } else {
+            context.save();
+            context.translate(xOffset + margin + realWidth + letterSize, height - yOffset - margin - Math.round(realHeight / 2));
+            context.rotate(Math.PI / 2);
+            drawText(context, further + "", 0, 0);
+            context.restore();
+        }
     }
 
     if (hypotenuse >= 0) {
@@ -75,10 +79,37 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
         let radius = Math.max(squareLength * 2, realWidth / (angle + 1));
         context.beginPath();
         context.moveTo(xOffset + margin + squareLength * 2, height - margin - yOffset);
-        context.arc(xOffset + margin, height - margin - yOffset, radius, 0, -angle*Math.PI/180, true);
+        context.arc(xOffset + margin, height - margin - yOffset, radius, 0, -angle * Math.PI / 180, true);
         context.stroke();
 
-        drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", xOffset + margin + radius + letterSize, height - margin - yOffset - letterSize);
+        let k = Math.tan(angle * Math.PI / 180);
+        let leftCornerHeight = k * radius;
+
+        if (leftCornerHeight < letterSize + lineWidth) {
+            let firstPossible = (letterSize + lineWidth) / k;
+
+            if (firstPossible + letterSize + lineWidth > realWidth) {
+                drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", margin + xOffset + letterSize, height - margin - yOffset + letterSize);
+            } else {
+                drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", firstPossible + letterSize, height - margin - yOffset - Math.round(letterSize / 2));
+            }
+
+        } else {
+            let textWidth = Math.round(letterSize * (angleStatus == 0 ? 1 : 1.8));
+            let rightCorner = xOffset + margin + radius + textWidth;
+            let right = xOffset + margin + realWidth;
+
+            if (rightCorner > right) {
+                let firstPossible = xOffset + margin + (letterSize + lineWidth) / k;
+                if (right - firstPossible - lineWidth > textWidth){
+                    drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", Math.round((right + firstPossible) / 2) + 2 * letterSize, height - margin - yOffset - letterSize);
+                } else {
+                    drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", margin + xOffset + letterSize, height - margin - yOffset + letterSize);
+                }
+            } else {
+                drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", xOffset + margin + radius + letterSize, height - margin - yOffset - letterSize);
+            }
+        }
     }
 
     let image = new Image(width, height);
