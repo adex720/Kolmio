@@ -10,6 +10,7 @@
     <meta name="version" content="1.0.0">
     <script src='math-helper.js' defer></script>
     <script src='angle-finder.js' defer></script>
+    <script src='image-creator.js' defer></script>
     <script src='main.js' defer></script>
     <link rel='stylesheet' href='styles.css'>
 </head>
@@ -39,7 +40,7 @@
             <tr>
                 <td class="empty"></td>
                 <td>
-                    <button id="calculate-triangle" onclick="updateTriangle()">Etsi kolmio</button>
+                    <button id="calculate-triangle" onclick="updateTriangle()">Etsi kolmiot</button>
                 </td>
             </tr>
             <tr>
@@ -79,6 +80,18 @@
                 <td><p class="left">Kuvan marginaali:</p></td>
                 <td>
                     <input type="number" id="image-margin" value="0" min="0" step="1" class="fix-input">
+                </td>
+            </tr>
+            <tr>
+                <td><p class="left">Viivan paksuus:</p></td>
+                <td>
+                    <input type="number" id="line-width" value="0" min="0" step="1" class="fix-input">
+                </td>
+            </tr>
+            <tr>
+                <td><p class="left">Fontin koko:</p></td>
+                <td>
+                    <input type="number" id="letter-size" value="0" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
@@ -129,6 +142,7 @@
             </tr>
         </table>
     </div>
+    <div id="image-location"></div>
 </div>
 </body>
 </html>

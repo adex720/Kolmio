@@ -3,7 +3,7 @@
     display: none;
 }
 
-p, button, input {
+p, button, input, select {
     font-size: 16px ;
     line-height: 18px;
     padding 0px;
