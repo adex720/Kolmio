@@ -85,7 +85,7 @@ function fixValue(element) {
         return;
     }
 
-    else if (element.hasAttribute("max") && value > max) {
+    if (element.hasAttribute("max") && value > max) {
         element.value = max;
         return;
     }
