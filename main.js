@@ -32,6 +32,14 @@ function updateTriangle() {
     }
 }
 
+function createResultParagraph(id, i) {
+    let p = document.createElement("p");
+    p.id = id + i;
+    p.classList.add("result-value");
+
+    return p;
+}
+
 function setResultElementCount(n) {
     let elements = document.getElementsByClassName("result-values");
     let current = elements.length;
@@ -44,25 +52,10 @@ function setResultElementCount(n) {
         div.id = "t" + i;
         div.classList.add("result-values");
 
-        let pa = document.createElement("p");
-        pa.id = "side-a" + i;
-        pa.classList.add("result-value");
-        div.appendChild(pa);
-
-        let pb = document.createElement("p");
-        pb.id = "side-b" + i;
-        pb.classList.add("result-value");
-        div.appendChild(pb);
-
-        let pc = document.createElement("p");
-        pc.id = "side-c" + i;
-        pc.classList.add("result-value");
-        div.appendChild(pc);
-
-        let ps = document.createElement("p");
-        ps.id = "sin" + i;
-        ps.classList.add("result-value");
-        div.appendChild(ps);
+        div.appendChild(createResultParagraph("side-a", i));
+        div.appendChild(createResultParagraph("side-b", i));
+        div.appendChild(createResultParagraph("side-c", i));
+        div.appendChild(createResultParagraph("sin", i));
 
         parent.appendChild(div);
     }
@@ -94,7 +87,7 @@ function fixValue(element) {
 
     if (step >= 1) {
         element.value = Math.round(value);
-        return 0;
+        return;
     }
 
     var diff = (value-min) / step;
@@ -105,7 +98,6 @@ function fixValue(element) {
     let a =  min + Number((step*diff).toFixed(fix));
 
     element.value = a;
-
 }
 
 function initFixValue(className) {
