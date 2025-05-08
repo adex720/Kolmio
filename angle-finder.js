@@ -16,9 +16,9 @@ function calculate(angle, digits){
 
         sin = Math.asin(b / c) * 180 / Math.PI;
 
-        let ero = sin-angle;
+        let diff = sin - angle;
 
-        if (0 < ero && ero < 1 && zeroCount(ero) >= digits) break;
+        if (0 < diff && diff < 1 && zeroCount(diff) >= digits) break;
 
         if (v > tan || n + 1 >= m) m++;
         else n++;
