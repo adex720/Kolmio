@@ -88,7 +88,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
 }
 
 function setupCharDrawing(context, fontSize) {
-    context.font = "48px serif";
+    context.font = fontSize + "px serif";
     context.textAlign = "center";
     context.textBaseline = "middle";
 }
