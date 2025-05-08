@@ -5,14 +5,14 @@ function isInteger(i) {
 
 function gcd(a, b) {
     let c;
-    if ( a < b){
+    if ( a < b) {
         c = a
         a = b
         b = c;
     }
 
     c = a % b;
-    while (c > 0){
+    while (c > 0) {
         a = b;
         b = c;
         c = a % b;

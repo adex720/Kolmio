@@ -39,7 +39,7 @@ function setResultElementCount(n) {
         elements[i].remove();
 
     let parent = document.getElementById("results");
-    for (let i = current; i < n; i++){
+    for (let i = current; i < n; i++) {
         let div = document.createElement("div");
         div.id = "t" + i;
         div.classList.add("result-values");
@@ -92,7 +92,7 @@ function fixValue(element) {
 
     if (!element.hasAttribute("step")) return;
 
-    if (step >= 1){
+    if (step >= 1) {
         element.value = Math.round(value);
         return 0;
     }
@@ -110,7 +110,7 @@ function fixValue(element) {
 
 function initFixValue(className) {
     elements = document.getElementsByClassName(className);
-    for (let e of elements){
+    for (let e of elements) {
        e.addEventListener("input", () => fixValue(e));
     }
 }

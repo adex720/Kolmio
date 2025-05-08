@@ -8,7 +8,7 @@ function calculate(angle, digits, amount=1) {
     let n = 1;
 
     let a, b, c, sin;
-    while (true){
+    while (true) {
         let t = n / m;
         let v = 2 * t / (1 - t * t);
 
@@ -20,7 +20,7 @@ function calculate(angle, digits, amount=1) {
 
         let diff = sin - angle;
 
-        if (0 < diff && diff < 1 && zeroCount(diff) >= digits){
+        if (0 < diff && diff < 1 && zeroCount(diff) >= digits) {
             let d = gcd(gcd(a, b), c);
             let newC = c / d;
 
