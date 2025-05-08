@@ -1,5 +1,5 @@
 
-function calculate(angle, digits){
+function calculate(angle, digits) {
     let tan = Math.tan(angle * Math.PI / 180);
 
     let m = 2;

@@ -1,9 +1,9 @@
 
-function displayError(message){
+function displayError(message) {
     alert(message);
 }
 
-function updateTriangle(){
+function updateTriangle() {
     let angle = Number(document.getElementById("angle").value);
     let decimals = Number(document.getElementById("decimals").value);
 
@@ -25,13 +25,13 @@ function updateTriangle(){
     document.getElementById("sin").innerHTML = "sin = " + sin + "&deg;";
 }
 
-function showAdvanced(){
+function showAdvanced() {
     var checkBox = document.getElementById("show-advanced");
 
     document.getElementById("image-creation").style.display = checkBox.checked ? "inline" : "none";
 }
 
-function fixValue(element){
+function fixValue(element) {
     let value = Number(element.value);
     let min = Number(element.min);
     let max = Number(element.max);
@@ -65,14 +65,14 @@ function fixValue(element){
 
 }
 
-function initFixValue(className){
+function initFixValue(className) {
     elements = document.getElementsByClassName(className);
     for (let e of elements){
        e.addEventListener("input", () => fixValue(e));
     }
 }
 
-function init(){
+function init() {
     initFixValue("fix-input");
 
     updateTriangle();

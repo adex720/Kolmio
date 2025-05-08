@@ -3,7 +3,7 @@ function isInteger(i) {
     return Math.abs(i - Math.round(i)) < 1e-6;
 }
 
-function gcd(a, b){
+function gcd(a, b) {
     let c;
     if ( a < b){
         c = a
@@ -21,8 +21,7 @@ function gcd(a, b){
     return b;
 }
 
-function zeroCount(i){
-    let x = i;
+function zeroCount(i) {
     i -= Math.floor(i);
 
     if (i == 0) return 1000;
