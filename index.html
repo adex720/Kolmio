@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="fi">
+
+<head>
+    <title>Kolmiot</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aapo Mauno">
+    <meta name="description"
+          content="Tällä sivulla on työkalu, jolla voi etsiä Pythagoraan kolmioita, joiden hypotenuusan viereisten kulmien suuruus asteina on lähellä kokonaislukua.">
+    <meta name="version" content="1.0.0">
+    <script src='main.js' defer></script>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+
+<body>
+<div id="page">
+    <div id="triangle-information">
+        <table>
+            <tr>
+                <td>Kulman suuruus:</td>
+                <td>
+                    <input type="number" id="angle">
+                </td>
+            </tr>
+            <tr>
+                <td>Nollien lukumäärä:</td>
+                <td>
+                    <input type="number" id="decimals">
+                </td>
+            </tr>
+            <tr>
+                <td class="empty"></td>
+                <td>
+                    <button id="calculate-triangle">Etsi kolmio</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Kuvatyökalut:</td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="image-creation">
+        <table>
+            <tr>
+                <td>Kuvan leveys:</td>
+                <td>
+                    <input type="number" id="image-width">
+                </td>
+            </tr>
+            <tr>
+                <td>Kuvan korkeus:</td>
+                <td>
+                    <input type="number" id="image-height">
+                </td>
+            </tr>
+            <tr>
+                <td>Kuvan marginaali:</td>
+                <td>
+                    <input type="number" id="image-margin">
+                </td>
+            </tr>
+            <tr>
+                <td>Kulma:</td>
+                <td>
+                    <select id="angle-status">
+                        <option value="value">Arvo</option>
+                        <option value="asked" selected>Kysytään</option>
+                        <option value="hidden">Piilotettu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Viereinen kateetti:</td>
+                <td>
+                    <select id="closer-status">
+                        <option value="value">Arvo</option>
+                        <option value="asked">Kysytään</option>
+                        <option value="hidden" selected>Piilotettu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Vastainen kateetti:</td>
+                <td>
+                    <select id="further-status">
+                        <option value="value" selected>Arvo</option>
+                        <option value="asked">Kysytään</option>
+                        <option value="hidden">Piilotettu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Hypotenuusa:</td>
+                <td>
+                    <select id="hypotenuse-status">
+                        <option value="value" selected>Arvo</option>
+                        <option value="asked">Kysytään</option>
+                        <option value="hidden">Piilotettu</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
