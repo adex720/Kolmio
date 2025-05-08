@@ -45,7 +45,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
 
     context.stroke();
 
-    let squareLength = Math.round(Math.min(realWidth, realHeight) / 8);
+    let squareLength = Math.round(Math.min(realWidth, realHeight) / 5);
     context.strokeRect(xOffset + margin + realWidth - squareLength, height - margin - yOffset - squareLength, squareLength, squareLength);
 
     setupCharDrawing(context, letterSize);
@@ -72,7 +72,13 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
     }
 
     if (angleStatus >= 0) {
-        // TODO: draw angle
+        let radius = Math.max(squareLength * 2, realWidth / (angle + 1));
+        context.beginPath();
+        context.moveTo(xOffset + margin + squareLength * 2, height - margin - yOffset);
+        context.arc(xOffset + margin, height - margin - yOffset, radius, 0, -angle*Math.PI/180, true);
+        context.stroke();
+
+        drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", xOffset + margin + radius + letterSize, height - margin - yOffset - letterSize);
     }
 
     let image = new Image(width, height);
@@ -92,5 +98,4 @@ function setupCharDrawing(context, fontSize) {
  */
 function drawText(context, text, x, y) {
     context.fillText(text, x, y);
-    console.log(x + ", " + y);
 }
