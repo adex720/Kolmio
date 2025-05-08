@@ -17,13 +17,13 @@
     <div id="triangle-information">
         <table>
             <tr>
-                <td>Kulman suuruus:</td>
+                <td><p>Kulman suuruus:</p></td>
                 <td>
-                    <input type="number" id="angle" value="30" min="0" max="90" step="1" class="fix-input">
+                    <input type="number" id="angle" value="30" min="0" max="89" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td>Nollien lukumäärä:</td>
+                <td><p>Nollien lukumäärä:</p></td>
                 <td>
                     <input type="number" id="decimals" value="2" min="0" max="10" step="1" class="fix-input">
                 </td>
@@ -31,11 +31,11 @@
             <tr>
                 <td class="empty"></td>
                 <td>
-                    <button id="calculate-triangle">Etsi kolmio</button>
+                    <button id="calculate-triangle" onclick="updateTriangle()">Etsi kolmio</button>
                 </td>
             </tr>
             <tr>
-                <td>Kuvatyökalut:</td>
+                <td><p>Kuvatyökalut:</p></td>
                 <td>
                     <label class="switch">
                         <input type="checkbox" id="show-advanced" onclick="showAdvanced()">
@@ -45,28 +45,34 @@
             </tr>
         </table>
     </div>
+    <div id="result-values">
+        <p id="side-a" class="result-value">a =</p>
+        <p id="side-b" class="result-value">b =</p>
+        <p id="side-c" class="result-value">c =</p>
+        <p id="sin" class="result-value">sin =</p>
+    </div>
     <div id="image-creation">
         <table>
             <tr>
-                <td>Kuvan leveys:</td>
+                <td><p>Kuvan leveys:</p></td>
                 <td>
                     <input type="number" id="image-width" value="200" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td>Kuvan korkeus:</td>
+                <td><p>Kuvan korkeus:</p></td>
                 <td>
                     <input type="number" id="image-height" value="200" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td>Kuvan marginaali:</td>
+                <td><p>Kuvan marginaali:</p></td>
                 <td>
                     <input type="number" id="image-margin" value="0" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td>Kulma:</td>
+                <td><p>Kulma:</p></td>
                 <td>
                     <select id="angle-status">
                         <option value="value">Arvo</option>
@@ -76,7 +82,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Viereinen kateetti:</td>
+                <td><p>Viereinen kateetti:</p></td>
                 <td>
                     <select id="closer-status">
                         <option value="value">Arvo</option>
@@ -86,7 +92,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Vastainen kateetti:</td>
+                <td><p>Vastainen kateetti:</p></td>
                 <td>
                     <select id="further-status">
                         <option value="value" selected>Arvo</option>
@@ -96,7 +102,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Hypotenuusa:</td>
+                <td><p>Hypotenuusa:</p></td>
                 <td>
                     <select id="hypotenuse-status">
                         <option value="value" selected>Arvo</option>
