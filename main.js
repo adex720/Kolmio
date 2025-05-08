@@ -23,12 +23,12 @@ function updateTriangle() {
         let b = result[1];
         let c = result[2];
 
-        let sin = (Math.asin(b / c) * 180 / Math.PI).toFixed(decimals + 3);
+        let angleString = (Math.asin(b / c) * 180 / Math.PI).toFixed(decimals + 3);
 
         document.getElementById("side-a" + i).innerHTML = "a = " + a;
         document.getElementById("side-b" + i).innerHTML = "b = " + b;
         document.getElementById("side-c" + i).innerHTML = "c = " + c;
-        document.getElementById("sin" + i).innerHTML = "sin = " + sin + "&deg;";
+        document.getElementById("angle" + i).innerHTML = "α = " + angleString + "&deg;";
     }
 }
 
@@ -55,7 +55,7 @@ function setResultElementCount(n) {
         div.appendChild(createResultParagraph("side-a", i));
         div.appendChild(createResultParagraph("side-b", i));
         div.appendChild(createResultParagraph("side-c", i));
-        div.appendChild(createResultParagraph("sin", i));
+        div.appendChild(createResultParagraph("angle", i));
 
         parent.appendChild(div);
     }
@@ -68,8 +68,8 @@ function updateTriangleImage() {
     let lineWidth = Number(document.getElementById("line-width").value);
     let letterSize = Number(document.getElementById("letter-size").value);
 
-    let angleString = document.getElementById("sin0").innerHTML;
-    let angle = Math.round(Number(angleString.substring(6, angleString.length - 1)));
+    let angleString = document.getElementById("angle0").innerHTML;
+    let angle = Math.round(Number(angleString.substring(4, angleString.length - 1)));
 
     let angleChosen = document.getElementById("angle-status").selectedIndex;
     let angleStatus = angleChosen == 2 ? -1 : angleChosen == 1 ? 0 : angle;

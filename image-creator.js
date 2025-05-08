@@ -69,7 +69,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
 
     if (hypotenuse >= 0) {
         context.save();
-        context.translate(xOffset + margin + Math.round(realWidth / 2) - letterSize * Math.sin(angle*Math.PI/180), height - yOffset - margin - Math.round(realHeight / 2) - letterSize * Math.cos(angle*Math.PI/180));
+        context.translate(xOffset + margin + Math.round(realWidth / 2) - letterSize * Math.sin(angle * Math.PI / 180), height - yOffset - margin - Math.round(realHeight / 2) - letterSize * Math.cos(angle * Math.PI / 180));
         context.rotate(-angle * Math.PI / 180);
         drawText(context, hypotenuse > 0 ? (hypotenuse) + "" : (closer != 0 && further != 0) ? "x" : (closer == 0 && further == 0) ? "z" : "y", 0, 0);
         context.restore();
