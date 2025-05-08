@@ -45,6 +45,9 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
 
     context.stroke();
 
+    let squareLength = Math.round(Math.min(realWidth, realHeight) / 8);
+    context.strokeRect(xOffset + margin + realWidth - squareLength, height - margin - yOffset - squareLength, squareLength, squareLength);
+
     setupCharDrawing(context, letterSize);
 
     context.fillStyle = '#000000';
