@@ -31,6 +31,12 @@
                 </td>
             </tr>
             <tr>
+                <td><p class="left">Kolmioiden lukumäärä:</p></td>
+                <td>
+                    <input type="number" id="triangles" value="1" min="0" max="25" step="1" class="fix-input">
+                </td>
+            </tr>
+            <tr>
                 <td class="empty"></td>
                 <td>
                     <button id="calculate-triangle" onclick="updateTriangle()">Etsi kolmio</button>
@@ -47,11 +53,13 @@
             </tr>
         </table>
     </div>
-    <div id="result-values">
-        <p id="side-a" class="result-value">a =</p>
-        <p id="side-b" class="result-value">b =</p>
-        <p id="side-c" class="result-value">c =</p>
-        <p id="sin" class="result-value">sin =</p>
+    <div id="results">
+        <div id="t0" class="result-values">
+            <p id="side-a0" class="result-value">a =</p>
+            <p id="side-b0" class="result-value">b =</p>
+            <p id="side-c0" class="result-value">c =</p>
+            <p id="sin0" class="result-value">sin =</p>
+        </div>
     </div>
     <div id="image-creation">
         <table>

@@ -15,7 +15,7 @@ p, button, input {
     margin: 5px;
 }
 
-#result-values {
+.result-values {
     display: flex;
     gap: 0px 20px;
     align-items: center;
