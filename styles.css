@@ -1,4 +1,8 @@
 
+#page {
+    margin: 3px 8px;
+}
+
 #image-creation {
     display: none;
 }
