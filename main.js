@@ -30,6 +30,8 @@ function updateTriangle() {
         document.getElementById("side-c" + i).innerHTML = "c = " + c;
         document.getElementById("angle" + i).innerHTML = "α = " + angleString + "&deg;";
     }
+
+    setTriangleCount(amount);
 }
 
 function createResultParagraph(id, i) {
@@ -61,6 +63,37 @@ function setResultElementCount(n) {
     }
 }
 
+function createTriangleOption(i, value) {
+    let element = document.createElement("option");
+    element.value = "" + i;
+    element.id = "triangle + i;"
+    element.innerHTML = value;
+
+    return element;
+}
+
+function setTriangleCount(n) {
+    let row = document.getElementById("draw-id-row");
+    row.style.display = n > 1 ? "" : "none";
+
+    let selection = document.getElementById("draw-id");
+    let chosenId = selection.selectedIndex;
+
+    let elements = selection.children;
+    let current = elements.length;
+    for (let i = current - 1; i >= 0; i--)
+        elements[i].remove();
+
+    for (let i = 0; i < n; i++) {
+        let c = document.getElementById("side-c" + i).innerHTML.substring(4);
+        selection.appendChild(createTriangleOption(i, c));
+    }
+
+    if (chosenId < n) {
+        selection.selectedIndex = chosenId;
+    }
+}
+
 function updateTriangleImage() {
     let width = Number(document.getElementById("image-width").value);
     let height = Number(document.getElementById("image-height").value);
@@ -74,7 +107,7 @@ function updateTriangleImage() {
     let angleChosen = document.getElementById("angle-status").selectedIndex;
     let angleStatus = angleChosen == 2 ? -1 : angleChosen == 1 ? 0 : angle;
 
-    let i = 0;
+    let i = document.getElementById("draw-id").selectedIndex;
     let closerChosen = document.getElementById("closer-status").selectedIndex;
     let closer = closerChosen == 2 ? -1 : closerChosen == 1 ? 0 : Number(document.getElementById("side-a" + i).innerHTML.substring(4));
     let furtherChosen = document.getElementById("further-status").selectedIndex;
