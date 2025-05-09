@@ -19,16 +19,20 @@ p, button, input, select {
     margin: 5px;
 }
 
-.result-values {
-    display: flex;
-    gap: 0px 20px;
-    align-items: center;
+#result-table {
+    border-collapse: collapse;
+}
 
-    padding: 7px;
+.result-values {
+    align-items: center;
+}
+
+.result-values:nth-child(even):not(:last-child) {
+  border-bottom: 2px solid #c7c7c7;
 }
 
 .result-value {
-    margin: 0px;
+    margin: 3px 10px;
 
     font-size: 16px ;
     line-height: 18px;

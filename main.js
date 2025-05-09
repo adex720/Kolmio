@@ -35,11 +35,14 @@ function updateTriangle() {
 }
 
 function createResultParagraph(id, i) {
+    let td = document.createElement("td");
+
     let p = document.createElement("p");
     p.id = id + i;
     p.classList.add("result-value");
 
-    return p;
+    td.appendChild(p);
+    return td;
 }
 
 function setResultElementCount(n) {
@@ -50,16 +53,16 @@ function setResultElementCount(n) {
 
     let parent = document.getElementById("results");
     for (let i = current; i < n; i++) {
-        let div = document.createElement("div");
-        div.id = "t" + i;
-        div.classList.add("result-values");
+        let row = document.createElement("tr");
+        row.id = "t" + i;
+        row.classList.add("result-values");
 
-        div.appendChild(createResultParagraph("side-a", i));
-        div.appendChild(createResultParagraph("side-b", i));
-        div.appendChild(createResultParagraph("side-c", i));
-        div.appendChild(createResultParagraph("angle", i));
+        row.appendChild(createResultParagraph("side-a", i));
+        row.appendChild(createResultParagraph("side-b", i));
+        row.appendChild(createResultParagraph("side-c", i));
+        row.appendChild(createResultParagraph("angle", i));
 
-        parent.appendChild(div);
+        parent.appendChild(row);
     }
 }
 

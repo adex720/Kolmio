@@ -55,16 +55,21 @@
             </tr>
         </table>
     </div>
-    <div id="results">
-        <div id="t0" class="result-values">
-            <p id="side-a0" class="result-value">a =</p>
-            <p id="side-b0" class="result-value">b =</p>
-            <p id="side-c0" class="result-value">c =</p>
-            <p id="angle0" class="result-value">α =</p>
-        </div>
+    <div id="result-area">
+        <table id="result-table">
+            <tbody id="results">
+            <tr id="t0" class="result-values">
+                <td><p id="side-a0" class="result-value">a =</p></td>
+                <td><p id="side-b0" class="result-value">b =</p></td>
+                <td><p id="side-c0" class="result-value">c =</p></td>
+                <td><p id="angle0" class="result-value">α =</p></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <div id="image-creation">
         <table>
+            <tbody>
             <tr>
                 <td><p class="left">Kuvan leveys:</p></td>
                 <td>
@@ -149,6 +154,7 @@
                     <button id="create-image" onclick="updateTriangleImage()">Luo kuva</button>
                 </td>
             </tr>
+            </tbody>
         </table>
     </div>
     <div id="image-location"></div>
