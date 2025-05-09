@@ -22,7 +22,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
     }
 
     let xOffset = Math.floor((maxWidth - realWidth - letterSize) / 2);
-    let yOffset =  Math.floor((maxHeight - realHeight + 2 * letterSize) / 2);
+    let yOffset = Math.floor((maxHeight - realHeight + 2 * letterSize) / 2);
 
     let canvas = document.createElement('canvas');
     canvas.width = width;
@@ -101,7 +101,7 @@ function createImage(width, height, margin, lineWidth, letterSize, angle, angleS
 
             if (rightCorner > right) {
                 let firstPossible = xOffset + margin + (letterSize + lineWidth) / k;
-                if (right - firstPossible - lineWidth > textWidth){
+                if (right - firstPossible - lineWidth > textWidth) {
                     drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", Math.round((right + firstPossible) / 2) + 2 * letterSize, height - margin - yOffset - letterSize);
                 } else {
                     drawText(context, angleStatus > 0 ? (angleStatus) + "°" : "α", margin + xOffset + letterSize, height - margin - yOffset + letterSize);

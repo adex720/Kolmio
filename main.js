@@ -18,7 +18,7 @@ function updateTriangle() {
     let results = calculate(angle, decimals, amount);
 
     for (let i = 0; i < amount; i++) {
-    let result = results[i];
+        let result = results[i];
         let a = result[0];
         let b = result[1];
         let c = result[2];
@@ -164,12 +164,12 @@ function fixValue(element) {
         return;
     }
 
-    var diff = (value-min) / step;
+    var diff = (value - min) / step;
     if (isInteger(diff)) return;
 
     let fix = Math.ceil(-Math.log10(step));
 
-    let a =  min + Number((step*diff).toFixed(fix));
+    let a = min + Number((step * diff).toFixed(fix));
 
     element.value = a;
 }
@@ -177,7 +177,7 @@ function fixValue(element) {
 function initFixValue(className) {
     elements = document.getElementsByClassName(className);
     for (let e of elements) {
-       e.addEventListener("input", () => fixValue(e));
+        e.addEventListener("input", () => fixValue(e));
     }
 }
 

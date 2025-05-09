@@ -5,7 +5,7 @@ function isInteger(i) {
 
 function gcd(a, b) {
     let c;
-    if ( a < b) {
+    if (a < b) {
         c = a
         a = b
         b = c;
