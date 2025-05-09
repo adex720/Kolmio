@@ -21,19 +21,31 @@
     <div id="triangle-information">
         <table>
             <tr>
-                <td><p class="left">Kulman suuruus:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Kulman suuruus:
+                        <span class="tooltiptext">Suorakulmaisesta&#160kolmiosta etsittävän toisen kulman suuruus</span>
+                    </span>
+                </td>
                 <td>
                     <input type="number" id="angle" value="30" min="0" max="89" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td><p class="left">Nollien lukumäärä:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Nollien lukumäärä:
+                        <span class="tooltiptext">Nollien&#160lukumäärä desimaalin jälkeen</span>
+                    </span>
+                </td>
                 <td>
                     <input type="number" id="decimals" value="2" min="0" max="10" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td><p class="left">Kolmioiden lukumäärä:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Kolmioiden lukumäärä:
+                        <span class="tooltiptext">Etsittävien&#160kolmioiden lukumäärä</span>
+                    </span>
+                </td>
                 <td>
                     <input type="number" id="triangles" value="1" min="0" max="25" step="1" class="fix-input">
                 </td>
@@ -45,7 +57,11 @@
                 </td>
             </tr>
             <tr>
-                <td><p class="left">Kuvatyökalut:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Kuvatyökalut:
+                        <span class="tooltiptext">Näytä työkalut kuvan luomiseen&#160valitusta&#160kolmiosta</span>
+                    </span>
+                </td>
                 <td>
                     <label class="switch">
                         <input type="checkbox" id="show-advanced" onclick="showAdvanced()">
@@ -83,13 +99,21 @@
                 </td>
             </tr>
             <tr>
-                <td><p class="left">Kuvan marginaali:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Kuvan marginaali:
+                        <span class="tooltiptext">Tyhjän tilan määrä kolmion&#160ulkopuolella</span>
+                    </span>
+                </td>
                 <td>
                     <input type="number" id="image-margin" value="50" min="0" step="1" class="fix-input">
                 </td>
             </tr>
             <tr>
-                <td><p class="left">Viivan paksuus:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Sivujen koko:
+                        <span class="tooltiptext">Kolmion&#160sivujen paksuus</span>
+                    </span>
+                </td>
                 <td>
                     <input type="number" id="line-width" value="5" min="0" step="1" class="fix-input">
                 </td>
@@ -101,7 +125,11 @@
                 </td>
             </tr>
             <tr id="draw-id-row">
-                <td><p class="left">Piirrettävä kolmio:</p></td>
+                <td class="left">
+                    <span class="hastooltip">Piirrettävä kolmio:
+                        <span class="tooltiptext" style="width: 150px">Lorem ipsum</span>
+                    </span>
+                </td>
                 <td>
                     <select id="draw-id">
                         <option value="0" id="triangle0">X</option>

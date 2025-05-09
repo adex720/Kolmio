@@ -15,6 +15,7 @@ p, button, input, select {
 
 .left {
     text-align: right;
+    align: right;
     margin: 5px;
 }
 
@@ -81,4 +82,35 @@ input:checked+.slider {
 
 input:checked+.slider:before {
     transform: translateX(13px);
+}
+
+.hastooltip {
+    position: relative;
+    border-bottom: 1px dotted black;
+    margin: 5px;
+}
+
+.tooltiptext {
+    visibility: hidden;
+
+    padding: 5px 7px;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    background-color: #f0f0f0;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2c2c2c;
+
+    text-align: center;
+    color: #000000;
+}
+
+.hastooltip:hover .tooltiptext {
+    visibility: visible;
 }
